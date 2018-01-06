@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Driver Map</title>
+
+	<!-- base stylesheets css -->
+	<link rel="stylesheet" href="assets/css/map/map.css">
+
+	</head>
+	<body>
+		<!-- <button id="start_travel">Start</button> -->
+		<!-- <button id="spawn">Spawn Stops</button> -->
+		<div id="map"> </div>
+		<!-- <ul id="instructions" style="display:none"></ul> -->
+	</body>
+
+	<!-- base javascript include -->
+	<script src="assets/js/jquery-3.2.1.min.js"></script>
+
+	<!-- custom javascripts -->	
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBatcaWSDGpvIRdQjbscIg-H-cpVJ8OQsg"></script>
+	<script src="assets/js/jquery.easing.1.3.js"></script>
+	<script src="assets/js/markerAnimate.js"></script>
+	<script src="assets/js/SlidingMarker.js"></script>
+	<script src="assets/js/artMapping.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			let timeout = ()=>{
+				return new Promise(resolve => setTimeout(resolve, 3000));
+			};
+			let mainProcess = async (selected_marker)=>{
+				var Lat1 = new google.maps.LatLng(5.40792253946198, 100.31796455383301);
+				var Lat2 = new google.maps.LatLng(5.409567423760808, 100.31603336334229);
+				await timeout();
+				selected_marker.setPosition(Lat1);
+				await timeout();
+				selected_marker.setPosition(Lat2);
+			};
+			let createMarker = (type, details)=>{
+				var imgs = {
+					art : 'paint.png',
+					history : 'helmet.png',
+					food : 'coffee.png', 
+					museum : 'museum.png',
+					cultural : 'dragon.png', 	
+				};
+				var image = 'assets/images/paint-board-and-brush.png';
+				var marker = new google.maps.Marker({
+					position: {lat: details.lat, lng: details.lng},
+					map: map,
+					title: details.name,
+					icon: `assets/images/${imgs[type]}`
+				});
+				return marker;
+			};
+			var global_center = new google.maps.LatLng(5.4193191459309205, 100.33725500106812);
+			var personal_center = new google.maps.LatLng(5.409172224694487, 100.31680583953857);
+			var zoomModes = {personal:17, global:16};
+			var mapOptions = {
+				zoom: zoomModes.global,
+				minZoom: zoomModes.global,
+				center: global_center,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				// styles: [{"featureType":"all","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"all","elementType":"labels","stylers":[{"visibility":"off"},{"saturation":"-100"}]},{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40},{"visibility":"off"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"off"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#4d6059"}]},{"featureType":"landscape","elementType":"geometry.stroke","stylers":[{"color":"#4d6059"}]},{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"color":"#4d6059"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"lightness":21}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#4d6059"}]},{"featureType":"poi","elementType":"geometry.stroke","stylers":[{"color":"#4d6059"}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#7f8d89"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#7f8d89"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#7f8d89"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#7f8d89"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#7f8d89"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#7f8d89"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"#7f8d89"}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#7f8d89"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#2b3638"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2b3638"},{"lightness":17}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#24282b"}]},{"featureType":"water","elementType":"geometry.stroke","stylers":[{"color":"#24282b"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.icon","stylers":[{"visibility":"off"}]}]
+			}
+			map = new google.maps.Map(document.getElementById('map'), mapOptions);
+			museums_markers = museums.map(createMarker.bind(null, 'museum'));
+			cultural_sites_markers = cultural_sites.map(createMarker.bind(null, 'cultural'));
+			eateries_markers = eateries.map(createMarker.bind(null, 'food'));
+			historical_buildings_markers = historical_buildings.map(createMarker.bind(null, 'history'));
+			street_arts_markers = street_arts.map(createMarker.bind(null, 'art'));
+
+			// let smart_map = new GMaps({
+			// 	div: '#map',
+			// 	lat: 5.4092807,
+			// 	lng: 100.3169835
+			// });
+			// let smart_marker = smart_map.addMarker({
+			// 	lat: 5.4092807,
+			// 	lng: 100.3169835,
+			// 	title: "Me!"
+			// });
+			//marker = new google.maps.Marker({
+			var newLat = new google.maps.LatLng(5.40792253946198, 100.31796455383301);
+			
+			marker = new SlidingMarker({
+				position: personal_center,
+				map: map,
+			});
+
+			var duration = 1000;
+
+			marker.setDuration(duration);
+			marker.setEasing('easeInQuad');
+			mainProcess(marker);
+			// setTimeout(()=>{
+			// 	marker.setPosition(newLat);
+			// }, 5000);
+			// var clickHandler = function (event, clickType) {
+			//    	var duration = 1000;
+			//     marker.setDuration(duration);
+			   //  marker.setEasing('easeInQuad');
+			//     marker.setPosition(event.latLng);
+			// };
+			let getLatLng =  (event, clickType)=>{
+				console.log(`Lat : ${event.latLng.lat()}`);
+				console.log(`Lng : ${event.latLng.lng()}`);
+				console.log(`${event.latLng.lat()}, ${event.latLng.lng()}`);
+			};
+			var leftClickHandler = function(event) { getLatLng(event, "left")  };
+
+			google.maps.event.addListener(map, 'click', leftClickHandler);
+		});
+	</script>
+	<!-- <script src="assets/js/busstop.js"></script> -->
+	<!-- <script src="assets/js/mapinit.js"></script> -->
+</html>
