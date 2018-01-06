@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <nav>
+  <nav class="bgcolor-1">
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Logo</a>
     </div>   
@@ -22,10 +22,11 @@
     <div id="pt-main" class="pt-perspective">
         
         <div class="pt-page pt-page-1 pt-page-current pt-page-moveFromRight">
-            <h3>Map</h3>
+            <div id="map"> </div>
         </div>
 
         <div class="pt-page pt-page-2">
+            <h4>Quest</h4>
             <div class="row quest-card">
                 <div class="col s12">
                     <a class="modal-trigger" href="#modal1">
@@ -173,13 +174,71 @@
                     <div class="col s12">
                         <a class="modal-trigger" href="#modal2">
                             <div class="card">
-                                <div class="card-content">
+                                <div class="card-content inventory-card-bg">
                                     <div class="row">
                                         <div class="col s4">
-                                            <img src="http://via.placeholder.com/100x100">
+                                            <img src="assets/images/i-dino.png" width="100" height="100">
                                         </div>
                                         <div class="col s8">
-                                            <p>Sumeng's honey</p>
+                                            <h5>Roar of the Saur</h5>
+                                            <p>"Little Boy with Pet Dinosaur" by Ernest Zacharevic</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>          
+                </div>
+                <div class="row quest-card">
+                    <div class="col s12">
+                        <a class="modal-trigger" href="#modal2">
+                            <div class="card">
+                                <div class="card-content inventory-card-bg">
+                                    <div class="row">
+                                        <div class="col s4">
+                                            <img src="assets/images/i-cat.png" width="100" height="100">
+                                        </div>
+                                        <div class="col s8">
+                                            <h5>A Lucky Mew</h5>
+                                            <p>"Love Me Like Your Fortune Cat" by ASA, or Artists for Stray Animals</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>          
+                </div>
+                <div class="row quest-card">
+                    <div class="col s12">
+                        <a class="modal-trigger" href="#modal3">
+                            <div class="card">
+                                <div class="card-content inventory-card-bg">
+                                    <div class="row">
+                                        <div class="col s4">
+                                            <img src="assets/images/i-girl.png" width="100" height="100">
+                                        </div>
+                                        <div class="col s8">
+                                            <h5>Maiden’s Token</h5>
+                                            <p>"Three Chinese Dolls", Artist(s) Unknown </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>          
+                </div>
+                <div class="row quest-card">
+                    <div class="col s12">
+                        <a class="modal-trigger" href="#modal2">
+                            <div class="card">
+                                <div class="card-content inventory-card-bg">
+                                    <div class="row">
+                                        <div class="col s4">
+                                            <img src="assets/images/i-pau.png" width="100" height="100">
+                                        </div>
+                                        <div class="col s8">
+                                            <h5>Hot Stacks!</h5>
+                                            <p>"I Want Pau!" aka "哥妹俩的童年回忆" by WK Setor</p>
                                         </div>
                                     </div>
                                 </div>
@@ -196,7 +255,7 @@
 
   </main>
 
-  <footer class="page-footer">
+  <footer class="page-footer bgcolor-1">
     <div class="container">
       <div class="row">       
         <div class="col s4" id="app-footer">
@@ -236,25 +295,176 @@
         </div>
     </div>
 
-      <div id="modal2" class="inventory-modal modal">
+    <div id="modal2" class="inventory-modal modal">
         <div class="modal-close">
             <span>X</span>
         </div>
         <div class="modal-content">
             <div class="modal-img center">
-                <img src="http://via.placeholder.com/100x100">
+                <img src="assets/images/i-dino.png" width="100" height="100">
             </div>
-            <h5 class="center">Rempit like me</h5>
+            <h5 class="center">Roar of the Saur</h5>
             <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>          
-        </div>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab col s3"><a  class="active" href="#tab1">Description</a></li>
+                        <li class="tab col s3"><a href="#tab2">Reward</a></li>                    
+                    </ul>
+                </div>
+                <div id="tab1" class="col s12">
+                    <img src="assets/images/i-actual-dino.jpg" width="100%">
+                    <p>"Little Boy with Pet Dinosaur" by Ernest Zacharevic</p>
+                    <p>Location : <a href="#" target="_blank">Ah Quee Street, Penang</a></p>
+                    <p>This painting was commissioned by the Penang Island Municipal Council (MPPP) to provide a collection of street art in conjunction with the 2012 George Town Festival. The mural depicts a small boy taking his dinosaur for a walk. The fact that the dinosaur is rendered in the form of child-like graffiti expresses the creative mind of small children and how they merge fantasy with reality.</p>    
+                </div>
+                <div id="tab2" class="col s12">
+                    <p style="font-size: 20px"><strong>FREE</strong> 1 Milo Dinosaur from Mamak Abu.</p>
+                    <p class="no-margin">Location: <a href="#" target="_blank">Mamak Abu</a></p>
+                    <p class="no-margin">Expiration: 31 Jan, 2018</p>
+                </div>
+              </div>                
+            </div>
+      </div>
 
+      <div id="modal3" class="inventory-modal modal">
+        <div class="modal-close">
+            <span>X</span>
+        </div>
+        <div class="modal-content">
+            <div class="modal-img center">
+                <img src="assets/images/i-girl.png" width="100" height="100">
+            </div>
+            <h5 class="center">Maiden’s Token</h5>
+            <hr>
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab col s3"><a  class="active" href="#tab3">Description</a></li>
+                        <li class="tab col s3"><a href="#tab4">Reward</a></li>                    
+                    </ul>
+                </div>
+                <div id="tab3" class="col s12">
+                    <img src="assets/images/i-actual-girl.jpg" width="100%">
+                    <p>"Three Chinese Dolls", Artist(s) Unknown </p>
+                    <p>Location : <a href="#" target="_blank">Lorong Soo Hong, Penang</a></p>
+                    <p>A quaint painting, easily missed if you are not looking for it. The mural art symbolises Malaysia’s 3 major races living peacefully in harmony despite the different cultures and religions. This harmony was achieved through tolerance and collaboration among the three communities.</p>    
+                </div>
+                <div id="tab4" class="col s12">
+                    <p style="font-size: 20px"><strong>20% discounts </strong>on Penang 3D Trick Art Museum entrance ticket.</p>
+                    <p class="no-margin">Location: <a href="#" target="_blank">Penang 3D Trick Art Museum</a></p>
+                    <p class="no-margin">Expiration: 31 Jan, 2018</p>
+
+                    
+
+
+
+                </div>
+              </div>                
+            </div>
       </div>
 
 
-  <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="assets/lib/materialize/js/materialize.min.js"></script>
-  <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/lib/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+  <!-- maps js -->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBatcaWSDGpvIRdQjbscIg-H-cpVJ8OQsg"></script>
+    <script src="assets/js/jquery.easing.1.3.js"></script>
+    <script src="assets/js/markerAnimate.js"></script>
+    <script src="assets/js/SlidingMarker.js"></script>
+    <script src="assets/js/artMapping.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            let timeout = ()=>{
+                return new Promise(resolve => setTimeout(resolve, 3000));
+            };
+            let mainProcess = async (selected_marker)=>{
+                var Lat1 = new google.maps.LatLng(5.40792253946198, 100.31796455383301);
+                var Lat2 = new google.maps.LatLng(5.409567423760808, 100.31603336334229);
+                await timeout();
+                selected_marker.setPosition(Lat1);
+                await timeout();
+                selected_marker.setPosition(Lat2);
+            };
+            let createMarker = (type, details)=>{
+                var imgs = {
+                    art : 'paint.png',
+                    history : 'helmet.png',
+                    food : 'coffee.png', 
+                    museum : 'museum.png',
+                    cultural : 'dragon.png',    
+                };
+                var image = 'assets/images/paint-board-and-brush.png';
+                var marker = new google.maps.Marker({
+                    position: {lat: details.lat, lng: details.lng},
+                    map: map,
+                    title: details.name,
+                    icon: `assets/images/${imgs[type]}`
+                });
+                return marker;
+            };
+            var global_center = new google.maps.LatLng(5.4193191459309205, 100.33725500106812);
+            var personal_center = new google.maps.LatLng(5.409172224694487, 100.31680583953857);
+            var zoomModes = {personal:17, global:16};
+            var mapOptions = {
+                zoom: zoomModes.global,
+                minZoom: zoomModes.global,
+                center: global_center,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                // styles: [{"featureType":"all","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"all","elementType":"labels","stylers":[{"visibility":"off"},{"saturation":"-100"}]},{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40},{"visibility":"off"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"off"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#4d6059"}]},{"featureType":"landscape","elementType":"geometry.stroke","stylers":[{"color":"#4d6059"}]},{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"color":"#4d6059"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"lightness":21}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#4d6059"}]},{"featureType":"poi","elementType":"geometry.stroke","stylers":[{"color":"#4d6059"}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#7f8d89"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#7f8d89"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#7f8d89"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#7f8d89"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#7f8d89"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#7f8d89"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"#7f8d89"}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#7f8d89"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#2b3638"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2b3638"},{"lightness":17}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#24282b"}]},{"featureType":"water","elementType":"geometry.stroke","stylers":[{"color":"#24282b"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.icon","stylers":[{"visibility":"off"}]}]
+            }
+            map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            museums_markers = museums.map(createMarker.bind(null, 'museum'));
+            cultural_sites_markers = cultural_sites.map(createMarker.bind(null, 'cultural'));
+            eateries_markers = eateries.map(createMarker.bind(null, 'food'));
+            historical_buildings_markers = historical_buildings.map(createMarker.bind(null, 'history'));
+            street_arts_markers = street_arts.map(createMarker.bind(null, 'art'));
+
+            // let smart_map = new GMaps({
+            //  div: '#map',
+            //  lat: 5.4092807,
+            //  lng: 100.3169835
+            // });
+            // let smart_marker = smart_map.addMarker({
+            //  lat: 5.4092807,
+            //  lng: 100.3169835,
+            //  title: "Me!"
+            // });
+            //marker = new google.maps.Marker({
+            var newLat = new google.maps.LatLng(5.40792253946198, 100.31796455383301);
+            
+            marker = new SlidingMarker({
+                position: personal_center,
+                map: map,
+            });
+
+            var duration = 1000;
+
+            marker.setDuration(duration);
+            marker.setEasing('easeInQuad');
+            mainProcess(marker);
+            // setTimeout(()=>{
+            //  marker.setPosition(newLat);
+            // }, 5000);
+            // var clickHandler = function (event, clickType) {
+            //      var duration = 1000;
+            //     marker.setDuration(duration);
+               //  marker.setEasing('easeInQuad');
+            //     marker.setPosition(event.latLng);
+            // };
+            let getLatLng =  (event, clickType)=>{
+                console.log(`Lat : ${event.latLng.lat()}`);
+                console.log(`Lng : ${event.latLng.lng()}`);
+                console.log(`${event.latLng.lat()}, ${event.latLng.lng()}`);
+            };
+            var leftClickHandler = function(event) { getLatLng(event, "left")  };
+
+            google.maps.event.addListener(map, 'click', leftClickHandler);
+        });
+    </script>
 
       <script type="text/javascript">
         (function ($) {

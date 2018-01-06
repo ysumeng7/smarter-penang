@@ -2,12 +2,34 @@ body { display: flex; height: 100%; min-height: 100vh; flex-direction: column; }
 main { flex: 1 0 auto; }
 footer i { color: white }
 .center { text-align: center !important; }
+.no-margin { margin: 0 !important; }
 
+.bgcolor-1 { background-color: #958BFF !important; }
+.bgcolor-2 { background-color: #86FFD0 !important; }
+
+.inventory-card-bg { background-color: #FFEF97 !important }
+
+.txtcolor-1 { color: black !important; }
+.txtcolor-2 { color: white !important; }
+.txtcolor-3 { color: black !important; }
+
+/*#86FFD0 
+#99E868 
+#FFE96C 
+#E8A25E 
+#FF6360 
+#f8f7f3 
+#9d958c 
+#4c5266 */
+
+/*===================================*/
+   /*animation css */
+/*===================================*/
 
 .pt-perspective {
     position: relative;
     width: 100%;
-    height: 70vh;
+    height: 83vh;
     -webkit-perspective: 1200px;
     -moz-perspective: 1200px;
     perspective: 1200px;
@@ -91,4 +113,18 @@ footer i { color: white }
    /*inventory css */
 /*===================================*/
 
+.inventory .card { box-shadow: none !important; }
+.inventory .card-content { border-radius: 10px !important }
 .inventory-modal .modal-close { position: absolute; right: 0px; padding: 7px; color: gray; width: 35px; text-align: center; }
+
+/*===================================*/
+   /*modal css */
+/*===================================*/
+
+.modal {  border-radius: 10px !important; }
+#modal2, #modal3 { height: 580px !important; max-height: 100%; }
+
+/*===================================*/
+   /*maps css */
+/*===================================*/
+#map { height: 700px; width: 500px; }
