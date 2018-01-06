@@ -1,0 +1,94 @@
+body { display: flex; height: 100%; min-height: 100vh; flex-direction: column; }
+main { flex: 1 0 auto; }
+footer i { color: white }
+.center { text-align: center !important; }
+
+
+.pt-perspective {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    perspective: 1200px;
+}
+
+.pt-page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.pt-page-current,
+.no-js .pt-page {
+    visibility: visible;
+    z-index: 1;
+}
+
+.pt-page-moveFromRight {
+    -webkit-animation: moveFromRight .6s ease both;
+    animation: moveFromRight .6s ease both;
+}
+@-webkit-keyframes moveFromRight {
+    from { -webkit-transform: translateX(100%); }
+}
+@keyframes moveFromRight {
+    from { -webkit-transform: translateX(100%); transform: translateX(100%); }
+}
+
+/*===================================*/
+   /*footer css */
+/*===================================*/
+
+#app-footer { text-align: center; }
+#app-footer .footer-icon { font-size: 28px }
+
+/*===================================*/
+   /*quest css */
+/*===================================*/
+
+.quest-card { margin: 0 !important; }
+.quest-card a { color: black; text-decoration: none; }
+.quest-card .right-arrow { position: absolute; right: 15px; top: 35%; font-size: 25px; }
+.quest-card .card-content { padding: 10px 5px !important; }
+.quest-card .card-content .row { margin-bottom: 0 !important; }
+
+.quest-card .completion-rate1 { position: absolute !important; top: 90px; right: 45px; }
+.quest-card .completion-rate2 { position: absolute !important; top: 38px; right: 45px; }
+.quest-card .completion-rate2 .p40 { font-size: 50px; }
+
+/*===================================*/
+   /*quest details css */
+/*===================================*/
+
+.quest-details .main-div { padding: 20px; border-bottom: 1px solid; }
+.quest-details .main-div .completion-rate { width: 50px; height: 50px; margin-top: 20px; }
+.quest-details .main-div .completion-rate .c100 { font-size: 50px; }
+
+.quest-details .sub-div .card { height: 100px; padding: 15px; }
+.ribbon-icon .circle-ribbon-top { border: 1px solid black; border-radius: 50%; font-size: 18px; padding: 5px; width: 35px; position: absolute; text-align: center; background-color: orange; z-index: 10 }
+.ribbon-icon .fa-bookmark { font-size: 42px; position: absolute; right: 22px; top: 44px; z-index: 1; color: yellow; }
+
+.quest-modal .modal-header { height: 80px; position: relative; border-bottom: 1px solid black; }
+.quest-modal .ribbon-icon .circle-ribbon-top { border: 1px solid black; border-radius: 50%; font-size: 18px; padding: 5px; width: 35px; position: absolute; text-align: center; background-color: orange; z-index: 10; right: 14px; top: 3px; }
+.quest-modal .ribbon-icon .fa-bookmark { font-size: 42px; position: absolute; right: 18px; top: 20px; z-index: 1; color: yellow; }
+.quest-modal .modal-close { text-align: center; padding: 5px; border: 1px solid black; border-radius: 5px; }
+
+/*===================================*/
+   /*inventory css */
+/*===================================*/
+
+.inventory-modal .modal-close { position: absolute; right: 0px; padding: 7px; color: gray; width: 35px; text-align: center; }

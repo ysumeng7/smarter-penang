@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<link type="text/css" rel="stylesheet" href="assets/css/circle.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="assets/css/main.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="assets/lib/materialize/css/materialize.min.css"  media="screen,projection"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Numbawan</title>
+</head>
+
+<body>
+	  <nav>
+	    <div class="nav-wrapper">
+	      <a href="#" class="brand-logo">Logo</a>
+		</div>	 
+	  </nav>
+	<main>
+		<div class="container">
+		   	<div class="inventory">
+		   		<div class="row quest-card">
+			        <div class="col s12">
+			        	<a class="modal-trigger" href="#modal1">
+				          	<div class="card">
+					            <div class="card-content">
+									<div class="row">
+					              		<div class="col s4">
+					              			<img src="http://via.placeholder.com/100x100">
+					        			</div>
+					              		<div class="col s8">
+					              			<p>Sumeng's honey</p>
+					        			</div>
+					        		</div>
+				        		</div>
+				        	</div>
+				        </a>
+			        </div>	        
+		      	</div>
+		   	</div>
+		</div>
+	</main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">       
+        <div class="col s4" id="app-footer">
+          <a href="quest.html">
+              <i class="fa fa-book footer-icon" aria-hidden="true"></i>
+            </a>
+        </div>
+          <div class="col s4" id="app-footer">
+            <a href="index.html">
+              <i class="fa fa-map footer-icon" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="col s4" id="app-footer">
+            <a href="inventory.html">
+              <i class="fa fa-briefcase footer-icon" aria-hidden="true"></i>
+            </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+            
+	  <div id="modal1" class="inventory-modal modal">
+	  	<div class="modal-close">
+    		<span>X</span>
+    	</div>
+	    <div class="modal-content">
+	    	<div class="modal-img center">
+	    		<img src="http://via.placeholder.com/100x100">
+	    	</div>
+	    	<h5 class="center">Rempit like me</h5>
+	    	<hr>
+	        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>	        
+	    </div>
+
+	  </div>
+
+	<script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="assets/lib/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      	(function ($) {
+        	$(function () {
+	            $('.inventory-modal').modal();
+	        });
+	    })(jQuery);
+    </script>
+</body>
+</html>
+        
