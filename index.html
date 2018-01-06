@@ -338,12 +338,13 @@
 
     <script type="text/javascript">
         $(function () {
+
             let timeout = ()=>{
                 return new Promise(resolve => setTimeout(resolve, 3000));
             };
             let mainProcess = async (selected_marker)=>{
-                var Lat1 = new google.maps.LatLng(5.40792253946198, 100.31796455383301);
-                var Lat2 = new google.maps.LatLng(5.409567423760808, 100.31603336334229);
+                var Lat1 = new google.maps.LatLng(5.414558124886021, 100.33825814723969);
+                var Lat2 = new google.maps.LatLng(5.415065470473344, 100.3376841545105);
                 await timeout();
                 selected_marker.setPosition(Lat1);
                 await timeout();
@@ -366,11 +367,11 @@
                 });
                 return marker;
             };
-            var global_center = new google.maps.LatLng(5.4193191459309205, 100.33725500106812);
-            var personal_center = new google.maps.LatLng(5.409172224694487, 100.31680583953857);
-            var zoomModes = {personal:17, global:16};
+            var global_center = new google.maps.LatLng(5.414683626202528, 100.33827155828476);
+            var personal_center = new google.maps.LatLng(5.4142510470868235, 100.33808916807175);
+            var zoomModes = {personal:19, global:16};
             var mapOptions = {
-                zoom: zoomModes.global,
+                zoom: zoomModes.personal,
                 minZoom: zoomModes.global,
                 center: global_center,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -394,7 +395,6 @@
             //  title: "Me!"
             // });
             //marker = new google.maps.Marker({
-            var newLat = new google.maps.LatLng(5.40792253946198, 100.31796455383301);
             
             marker = new SlidingMarker({
                 position: personal_center,
@@ -423,6 +423,12 @@
             var leftClickHandler = function(event) { getLatLng(event, "left")  };
 
             google.maps.event.addListener(map, 'click', leftClickHandler);
+
+            window.setInterval(()=>{
+                map.panTo(marker.getPosition());
+            }, 100);
+            // while(true){
+            // }
         });
     </script>
 
