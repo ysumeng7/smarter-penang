@@ -33,7 +33,7 @@
                         <div class="card-content quest-card-bg">
                             <div class="row">
                                 <div class="col s3 no-padding">
-                                    <img src="assets/images/i-actual-pau.png" width="100" height="100">
+                                    <img src="assets/images/i-pau.png" width="100" height="100">
                                 </div>
                                 <div class="col s6">
                                     <h5>Like a Baus</h5>
@@ -691,24 +691,25 @@
                     resolve();
                 } , 500)});
             }
-            var step = 0;
+            var done = 0;
             let mainProcess = async ()=>{
-                if(step > 4){
-                    return false;
-                }
-                if (step == 0){
-                }else{
+                if (done == 0){
                     var steps = [
-                        '',
                         new google.maps.LatLng(5.4133645259565855, 100.33778339624405),
                         new google.maps.LatLng(5.413650242245942, 100.33747762441635),
                         new google.maps.LatLng(5.414528752233711, 100.33831715583801),
                         new google.maps.LatLng(5.414656923796949, 100.33819645643234),
                     ];
-                    marker.setPosition(steps[step]);
-                    await pantime();
-                    await pantime();
-                    await pantime();
+                    for(var i = 0 ; i <steps.length;i++){
+                        marker.setPosition(steps[i]);
+                        await pantime();
+                        await pantime();
+                        await pantime();
+                    }
+                    // steps.map( async (step)=>{
+                    // });
+                    // forEach()
+                    // marker.setPosition(steps[step]);
                     // var Lat1 = new google.maps.LatLng(5.414528752233711, 100.33831715583801);
                     // var Lat2 = new google.maps.LatLng(5.415065470473344, 100.3376841545105);
                     // await timeout();
@@ -718,22 +719,19 @@
                     // await pantime();
                     // await pantime();
                     // await pantime();
+                    // }
+                    // step++;
+                    // await timeout();
+                    done = 1;
                 }
-                step++;
-                // await timeout();
             };
             let createMarker = (type, details)=>{
                 var imgs = {
-                    art : 'paint.png',
-                    history : 'helmet.png',
-                    food : 'coffee.png', 
-                    museum : 'museum.png',
-                    cultural : 'dragon.png',    
                     art : 'paint-brush.png',
                     history : 'history.png',
-                    food : 'noodles.png',
+                    food : 'noodles.png', 
                     museum : 'bank.png',
-                    cultural : 'church.png',
+                    cultural : 'church.png',    
                 };
                 var marker = new google.maps.Marker({
                     position: {lat: details.lat, lng: details.lng},
@@ -803,7 +801,6 @@
 
             marker.setDuration(duration);
             marker.setEasing('easeInQuad');
-            mainProcess(marker);
             // setTimeout(()=>{
             //  marker.setPosition(newLat);
             // }, 5000);
@@ -821,7 +818,7 @@
             var leftClickHandler = function(event) { getLatLng(event, "left")  };
 
             google.maps.event.addListener(map, 'click', leftClickHandler);
-            google.maps.event.addListener(map, 'click', mainProcess);
+            // google.maps.event.addListener(map, 'click', mainProcess);
             var classname = document.getElementsByClassName("map-button");
             Array.from(classname).forEach(function(element) {
               element.addEventListener('click', mainProcess);
