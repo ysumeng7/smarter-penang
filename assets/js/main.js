@@ -33,7 +33,7 @@ $(document).ready(function(){
       $('.pg4btn img').attr('src', 'assets/images/nav-inventory.png');
   });
 
-  $(".pg3btn").on("click", function () {
+  $(document).on("click", ".pg3btn", function () {
       animate(3);
       
       $('.pg2btn img').attr('src', 'assets/images/nav-quest-selected.png');
