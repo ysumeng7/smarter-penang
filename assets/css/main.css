@@ -64,8 +64,8 @@ footer i { color: white }
 }
 
 .pt-page-moveFromRight {
-    -webkit-animation: moveFromRight .6s ease both;
-    animation: moveFromRight .6s ease both;
+    -webkit-animation: moveFromRight 0s ease both;
+    animation: moveFromRight 0s ease both;
 }
 @-webkit-keyframes moveFromRight {
     from { -webkit-transform: translateX(100%); }
@@ -116,7 +116,7 @@ footer i { color: white }
 .quest-modal .ribbon-icon .fa-bookmark { font-size: 42px; position: absolute; right: 18px; top: 20px; z-index: 1; color: yellow; }
 .quest-modal .modal-close { text-align: center; padding: 5px; border: 1px solid black; border-radius: 5px; }
 .quest-modal .reward-point { position: absolute; top: 20px; right: 18px; } 
-.quest-modal .reward-badge { width: 15px; margin-top: 8px; } 
+.quest-modal .reward-badge { margin-top: 15px; } 
 
 
 /*===================================*/
@@ -140,6 +140,7 @@ footer i { color: white }
 /*===================================*/
    /*maps css */
 /*===================================*/
+
 #map { height: 620px; width: 414px; }
 .g-bicycle{
     height: 85px;
@@ -148,3 +149,5 @@ footer i { color: white }
 .g-button{
     margin-left: 65px;
 }
+.faction-img { margin-top: 10px; border: 1px solid black; height: 242px; }
+.faction-img img { width: 360px; margin: 0 auto; }
