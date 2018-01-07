@@ -139,8 +139,9 @@ footer i { color: white }
    /*modal css */
 /*===================================*/
 
-.modal {  border-radius: 10px !important; min-height: 570px; }
+.modal {  border-radius: 10px !important; }
 #modal2, #modal3 { height: 580px !important; max-height: 100%; }
+.modal .modal-footer { padding: 4px 26px !important; }
 
 /*===================================*/
    /*maps css */
