@@ -9,13 +9,13 @@
   <link type="text/css" rel="stylesheet" href="assets/lib/materialize/css/materialize.min.css"  media="screen,projection"/>
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Numbawan</title>
+  <title>ARTventure</title>
 </head>
 
 <body>
   <nav class="bgcolor-1">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">HOME</a>
+      <a href="#" class="brand-logo">ARTventure</a>
     </div>   
   </nav>
   <main>   
@@ -111,7 +111,7 @@
                             <img src="assets/images/i-pau.png" width="100" height="100">
                         </div>
                         <div class="col s6">
-                            <p>Hot Stacks!</p>
+                            <h5>Like a Baus</h5>
                             <p>"I Want Pau!" aka "哥妹俩的童年回忆" by WK Setor</p>
                         </div>
                         <div class="col s2">
@@ -176,7 +176,7 @@
                             <img src="assets/images/i-cat.png" width="100" height="100">
                         </div>
                         <div class="col s6">
-                            <p>A Lucky Mew</p>
+                            <h5>A Lucky Mew</h5>
                             <p>"Love Me Like Your Fortune Cat" by ASA, or Artists for Stray Animals</p>
                         </div>
                         <div class="col s2">
@@ -241,13 +241,13 @@
                             <img src="assets/images/i-bicycle.png" width="100" height="100">
                         </div>
                         <div class="col s6">
-                            <p>Bike of Whizz</p>
+                            <h5>Bike of Whizz</h5>
                             <p>“Little Children on a Bicycle” by Ernest Zacharevic</p>
                         </div>
                         <div class="col s2">
                             <div class="completion-rate">
-                                <div class="c100 p80 small">
-                                    <span>6/8</span>
+                                <div class="c100 p75 small">
+                                    <span>6/15</span>
                                     <div class="slice"><div class="bar"></div><div class="fill"></div></div>
                                 </div>
                             </div>
@@ -257,7 +257,7 @@
                 <div class="sub-div">                   
                     <div class="row quest-card">
                         <div class="col s12">
-                            <a class="modal-trigger" href="#modal1">
+                            <a class="modal-trigger" href="#modal-bike-q1">
                             <div class="card">
                                 <div class="card-content quest-card-bg">
                                     <div class="row">
@@ -265,7 +265,7 @@
                                             <span class="text">Who is the artist of this mural?</span>
                                         </div>
                                         <div class="col s2">
-                                            <span class="reward-point">5</span>
+                                            <span class="reward-point">2</span>
                                             <img src="assets/images/reward-badge.png" width="30" class="reward-badge">
                                         </div>
                                     </div>
@@ -277,12 +277,52 @@
                     
                     <div class="row quest-card">
                         <div class="col s12">
-                            <a class="modal-trigger" href="#modal1">
+                            <a class="modal-trigger" href="#modal-bike-q2">
                                 <div class="card">
                                     <div class="card-content quest-card-bg">
                                         <div class="row">
                                             <div class="col s10">
-                                                <span class="text">Why are there 2 children painted?</span>
+                                                <span class="text">Create a drawing at China House.</span>
+                                            </div>
+                                            <div class="col s2">
+                                                <span class="reward-point">5</span>
+                                            <img src="assets/images/reward-badge.png" width="30" class="reward-badge">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row quest-card">
+                        <div class="col s12">
+                            <a class="modal-trigger" href="#modal-bike-q3">
+                                <div class="card">
+                                    <div class="card-content quest-card-bg">
+                                        <div class="row">
+                                            <div class="col s10">
+                                                <span class="text">Spot the puzzle</span>
+                                            </div>
+                                            <div class="col s2">
+                                                <span class="reward-point">3</span>
+                                            <img src="assets/images/reward-badge.png" width="30" class="reward-badge">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>          
+                    </div>
+
+                    <div class="row quest-card">
+                        <div class="col s12">
+                            <a class="modal-trigger" href="#modal-bike-q4">
+                                <div class="card">
+                                    <div class="card-content quest-card-bg">
+                                        <div class="row">
+                                            <div class="col s10">
+                                                <span class="text">Visit Wonderfood Museum</span>
                                             </div>
                                             <div class="col s2">
                                                 <span class="reward-point">5</span>
@@ -427,6 +467,103 @@
         <div class="modal-footer">
             <div class="col offset-s1 s10 modal-close">
                 <span>GO !</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="modal-bike-q1" class="quest-modal modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col s10">
+                        <h5>Who is the artist of this mural?</h5>
+                    </div>
+                    <div class="col s2">
+                        <span class="reward-point">3</span>
+                        <img src="assets/images/reward-badge.png" width="30" class="reward-badge">
+                    </div>
+                </div>
+            </div>
+            <p>Visit "Little Children on a Bicycle" Mural at and find out who is the artist of this mural.</p>
+            <p>Location: <a href="#">"Little Children on a Bicycle" Mural</a></p>
+            <br>
+            <p>Answer:</p>
+            <p>A. John David</p>
+            <p>B. Ernest Zacharevic</p>
+            <p>C. Mr Kay</p>
+            <p>D. Mark Zuckeberg</p>
+        </div>
+        <div class="modal-footer">
+            <div class="col offset-s1 s10 modal-close">
+                <span>ANSWER</span>
+            </div>
+        </div>
+    </div>
+    <div id="modal-bike-q2" class="quest-modal modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col s10">
+                        <h5>Create a drawing at China House.</h5>
+                    </div>
+                    <div class="col s2">
+                        <span class="reward-point">5</span>
+                        <img src="assets/images/reward-badge.png" width="30" class="reward-badge">
+                    </div>
+                </div>
+            </div>
+            <p>Visit China House Cafe and create a drawing from scratch, then submit it to complete this quest</p>
+            <p>Location: <a href="#">China House Cafe</a></p>
+        </div>
+        <div class="modal-footer">
+            <div class="col offset-s1 s10 modal-close">
+                <span>TAKE A PHOTO</span>
+            </div>
+        </div>
+    </div>
+    <div id="modal-bike-q3" class="quest-modal modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col s10">
+                        <h5>Spot the puzzle</h5>
+                    </div>
+                    <div class="col s2">
+                        <span class="reward-point">5</span>
+                        <img src="assets/images/reward-badge.png" width="30" class="reward-badge">
+                    </div>
+                </div>
+            </div>
+            <p>Find the full picture of this puzzle and take a photo to complete this quest</p>
+            <p><img src="assets/images/spot-puzzle-1.png" alt="" style="width:100%;"></p>
+            <p>Location: <a href="#">Random puzzle</a></p>
+        </div>
+        <div class="modal-footer">
+            <div class="col offset-s1 s10 modal-close">
+                <span>SOLVE THE PUZZLE</span>
+            </div>
+        </div>
+    </div>
+    <div id="modal-bike-q4" class="quest-modal modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col s10">
+                        <h5>Visit Wonderfood Museum</h5>
+                    </div>
+                    <div class="col s2">
+                        <span class="reward-point">5</span>
+                        <img src="assets/images/reward-badge.png" width="30" class="reward-badge">
+                    </div>
+                </div>
+            </div>
+            <p>Visit Wonderfood Museum and request a QR code scanning from the staff to complete this quest</p>
+            <p>Location: <a href="#">Wonderfood Museum</a></p>
+        </div>
+        <div class="modal-footer">
+            <div class="col offset-s1 s10 modal-close">
+                <span>SCAN QR CODE</span>
             </div>
         </div>
     </div>
