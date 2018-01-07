@@ -116,7 +116,7 @@ footer i { color: white }
 .quest-modal .ribbon-icon .fa-bookmark { font-size: 42px; position: absolute; right: 18px; top: 20px; z-index: 1; color: yellow; }
 .quest-modal .modal-close { text-align: center; padding: 5px; border: 1px solid black; border-radius: 5px; }
 .quest-modal .reward-point { position: absolute; top: 20px; right: 18px; } 
-.quest-modal .reward-badge { width: 15px; margin-top: 8px; } 
+.quest-modal .reward-badge { margin-top: 15px; } 
 
 
 /*===================================*/
@@ -142,3 +142,5 @@ footer i { color: white }
 /*===================================*/
 
 #map { height: 700px; width: 500px; }
+.faction-img { margin-top: 10px; border: 1px solid black; height: 242px; }
+.faction-img img { width: 360px; margin: 0 auto; }
