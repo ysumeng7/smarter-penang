@@ -201,7 +201,7 @@
                 <img src="assets/images/nav-quest.png" width="35">
              </a>
         </div>
-        <div class="col s4" id="app-footer">
+        <div class="col s4 map-button" id="app-footer">
           <a href="#" class="pg1btn">
             <img src="assets/images/nav-maps.png" width="35">
           </a>
@@ -340,15 +340,47 @@
         $(function () {
 
             let timeout = ()=>{
-                return new Promise(resolve => setTimeout(resolve, 3000));
+                return new Promise(resolve => {setTimeout(()=>{
+                    map.panTo(marker.getPosition());
+                    resolve();
+                } , 3000)});
             };
-            let mainProcess = async (selected_marker)=>{
-                var Lat1 = new google.maps.LatLng(5.414558124886021, 100.33825814723969);
-                var Lat2 = new google.maps.LatLng(5.415065470473344, 100.3376841545105);
-                await timeout();
-                selected_marker.setPosition(Lat1);
-                await timeout();
-                selected_marker.setPosition(Lat2);
+            let pantime = ()=>{
+                return new Promise(resolve => {setTimeout(()=>{
+                    map.panTo(marker.getPosition());
+                    resolve();
+                } , 500)});
+            }
+            var step = 0;
+            let mainProcess = async ()=>{
+                if(step > 4){
+                    return false;
+                }
+                if (step == 0){
+                }else{
+                    var steps = [
+                        '',
+                        new google.maps.LatLng(5.4133645259565855, 100.33778339624405),
+                        new google.maps.LatLng(5.413650242245942, 100.33747762441635),
+                        new google.maps.LatLng(5.414528752233711, 100.33831715583801),
+                        new google.maps.LatLng(5.414656923796949, 100.33819645643234),
+                    ];
+                    marker.setPosition(steps[step]);
+                    await pantime();
+                    await pantime();
+                    await pantime();
+                    // var Lat1 = new google.maps.LatLng(5.414528752233711, 100.33831715583801);
+                    // var Lat2 = new google.maps.LatLng(5.415065470473344, 100.3376841545105);
+                    // await timeout();
+                    // selected_marker.setPosition(Lat1);
+                    // // await timeout();
+                    // selected_marker.setPosition(Lat2);
+                    // await pantime();
+                    // await pantime();
+                    // await pantime();
+                }
+                step++;
+                // await timeout();
             };
             let createMarker = (type, details)=>{
                 var imgs = {
@@ -358,7 +390,6 @@
                     museum : 'museum.png',
                     cultural : 'dragon.png',    
                 };
-                var image = 'assets/images/paint-board-and-brush.png';
                 var marker = new google.maps.Marker({
                     position: {lat: details.lat, lng: details.lng},
                     map: map,
@@ -367,15 +398,17 @@
                 });
                 return marker;
             };
-            var global_center = new google.maps.LatLng(5.414683626202528, 100.33827155828476);
-            var personal_center = new google.maps.LatLng(5.4142510470868235, 100.33808916807175);
+            var global_center = new google.maps.LatLng(5.413556783661483, 100.33801406621933);
+            var personal_center = new google.maps.LatLng(5.413556783661483, 100.33801406621933);
             var zoomModes = {personal:19, global:16};
             var mapOptions = {
                 zoom: zoomModes.personal,
                 minZoom: zoomModes.global,
                 center: global_center,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
-                // styles: [{"featureType":"all","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"all","elementType":"labels","stylers":[{"visibility":"off"},{"saturation":"-100"}]},{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40},{"visibility":"off"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"off"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#4d6059"}]},{"featureType":"landscape","elementType":"geometry.stroke","stylers":[{"color":"#4d6059"}]},{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"color":"#4d6059"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"lightness":21}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#4d6059"}]},{"featureType":"poi","elementType":"geometry.stroke","stylers":[{"color":"#4d6059"}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#7f8d89"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#7f8d89"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#7f8d89"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#7f8d89"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#7f8d89"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#7f8d89"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"#7f8d89"}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#7f8d89"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#2b3638"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2b3638"},{"lightness":17}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#24282b"}]},{"featureType":"water","elementType":"geometry.stroke","stylers":[{"color":"#24282b"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.icon","stylers":[{"visibility":"off"}]}]
+                streetViewControl: false,
+                mapTypeControl: false,
+                styles:[{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
             }
             map = new google.maps.Map(document.getElementById('map'), mapOptions);
             museums_markers = museums.map(createMarker.bind(null, 'museum'));
@@ -384,6 +417,25 @@
             historical_buildings_markers = historical_buildings.map(createMarker.bind(null, 'history'));
             street_arts_markers = street_arts.map(createMarker.bind(null, 'art'));
 
+            var contentString = '<div id="content g-content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<p id="firstHeading" class="firstHeading"><b>“Little Children on a Bicycle” by Ernest Zacharevic</b></p>'+
+            '<div id="bodyContent">'+
+            '<p><img src="assets/images/i-actual-bicycle.jpg" alt="" class="left g-bicycle" />This painting was commissioned by the Penang Island Municipal Council (MPPP) to provide a collection of street art in conjunction with the 2012 George Town Festival. It depicts a little girl taking her younger brother on a bicycle ride. The joy in their faces echoes down the street, providing a ray of cheer and adding character to Armenian Street.</p>'+
+            '<p>Location: Armenian St., Penang</p>'+
+            '<a href="#" class="waves-effect waves-light btn pg3btn g-button">Challenge Quest!</a>'+
+            '</div>'+
+            '</div>';
+
+            var infowindow = new google.maps.InfoWindow({
+              content: contentString
+            });
+            street_arts_markers.map((marker)=>{
+                marker.addListener('click', function() {
+                  infowindow.open(map, marker);
+                });
+            });
             // let smart_map = new GMaps({
             //  div: '#map',
             //  lat: 5.4092807,
@@ -399,9 +451,10 @@
             marker = new SlidingMarker({
                 position: personal_center,
                 map: map,
+                icon: `assets/images/human_icon.png`
             });
 
-            var duration = 1000;
+            var duration = 1500;
 
             marker.setDuration(duration);
             marker.setEasing('easeInQuad');
@@ -423,7 +476,11 @@
             var leftClickHandler = function(event) { getLatLng(event, "left")  };
 
             google.maps.event.addListener(map, 'click', leftClickHandler);
-
+            google.maps.event.addListener(map, 'click', mainProcess);
+            var classname = document.getElementsByClassName("map-button");
+            Array.from(classname).forEach(function(element) {
+              element.addEventListener('click', mainProcess);
+            });
             // window.setInterval(()=>{
             //     map.panTo(marker.getPosition());
             // }, 100);
