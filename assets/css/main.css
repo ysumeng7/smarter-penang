@@ -7,15 +7,19 @@ footer i { color: white }
 .no-margin { margin: 0 !important; }
 .no-padding { padding: 0 !important; }
 
-.bgcolor-1 { background-color: #958BFF !important; }
+.bgcolor-1 { background-color: #580C5E !important; }
 .bgcolor-2 { background-color: #86FFD0 !important; }
 
-.inventory-card-bg { background-color: #FFEF97 !important }
-.quest-card-bg { background-color: #FFEF97 !important }
+.inventory-card-bg { background-color: #86FFD0 !important }
+.quest-card-bg { background-color: #FFEC7E !important }
 
 .txtcolor-black { color: black !important; }
 .txtcolor-white { color: white !important; }
 .txtcolor-3 { color: black !important; }
+
+
+.quest-card .text { font-weight: bold; margin-left: 15px; }
+.quest-details .main-div { background: #fafafa !important; }
 
 /*#86FFD0 
 #99E868 
@@ -135,7 +139,7 @@ footer i { color: white }
    /*modal css */
 /*===================================*/
 
-.modal {  border-radius: 10px !important; }
+.modal {  border-radius: 10px !important; min-height: 570px; }
 #modal2, #modal3 { height: 580px !important; max-height: 100%; }
 
 /*===================================*/
