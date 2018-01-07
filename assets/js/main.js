@@ -16,20 +16,39 @@ $(document).ready(function(){
   $(".pg1btn").on("click", function () {
       $(".brand-logo").html("HOME");
       animate(1);
+
+      $('.pg1btn img').attr('src', 'assets/images/nav-maps-selected.png');
+
+      $('.pg2btn img').attr('src', 'assets/images/nav-quest.png');
+      $('.pg4btn img').attr('src', 'assets/images/nav-inventory.png');
   });
 
   $(".pg2btn").on("click", function () {
       $(".brand-logo").html("QUEST");
       animate(2);
+
+      $('.pg2btn img').attr('src', 'assets/images/nav-quest-selected.png');
+
+      $('.pg1btn img').attr('src', 'assets/images/nav-maps.png');
+      $('.pg4btn img').attr('src', 'assets/images/nav-inventory.png');
   });
 
   $(".pg3btn").on("click", function () {
       animate(3);
+      
+      $('.pg2btn img').attr('src', 'assets/images/nav-quest-selected.png');
+      $('.pg1btn img').attr('src', 'assets/images/nav-maps.png');
+      $('.pg4btn img').attr('src', 'assets/images/nav-inventory.png');
   });
 
   $(".pg4btn").on("click", function () {
       $(".brand-logo").html("INVENTORY");
       animate(4);
+
+      $('.pg4btn img').attr('src', 'assets/images/nav-inventory-selected.png');
+
+      $('.pg2btn img').attr('src', 'assets/images/nav-quest.png');
+      $('.pg1btn img').attr('src', 'assets/images/nav-maps.png');
   });
 
   $(".pg5btn").on("click", function () {
